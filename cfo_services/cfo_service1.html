@@ -20,15 +20,50 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
 </head>
 <body>
     
     <!---- Start coding for home page ---->
 
-    <main>
+    <main class="scroll-container main">
 
       <!---- Start coding for Header ---->
+
+      <i class="ri-menu-3-line menu_icon"></i>
+
+        <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+        <div class="side-menu" aria-hidden="true">
+            <i class="ri-close-large-line close_icon"></i>
+            <ul>
+                <li><a href="../index.html"><img src="../assets/logo/logo.jpeg" alt="CFO Craft"></a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class="cfo" isOpend="false"><a href="">CFO Services <span class="material-symbols-outlined down_icon1">keyboard_arrow_down</span></a></li>
+                    <div class="cfosubmenu">
+                        <li><a href="cfo_service1.html">CFO Services</a></li>
+                        <li><a href="cfo_service2.html">Virtual CFO Services</a></li>
+                        <li><a href="cfo_service3.html">Part-Time / Fractional CFO Services</a></li>
+                        <li><a href="cfo_service4.html">Outsourced CFO Services</a></li>
+                        <li><a href="cfo_service5.html">Interim CFO Services</a></li>
+                    </div>
+                <li class="business" isOpend="false"><a href="">Business Services <span class="material-symbols-outlined down_icon2">keyboard_arrow_down</span></a></li>
+                    <div class="busiesssubmenu">
+                        <li><a href="cfo_service1.html">CFO Services</a></li>
+                        <li><a href="../bussiness_services/business_service2.html">Business Strategy & Planning</a></li>
+                        <li><a href="../bussiness_services/business_service3.html">Business Process Transformation</a></li>
+                        <li><a href="../bussiness_services/business_service4.html">Business Intelligence & Analysis</a></li>
+                        <li><a href="../bussiness_services/business_service5.html">Business Process Optimising</a></li>
+                        <li><a href="../bussiness_services/business_service6.html">Cash Management and Funding</a></li>
+                    </div>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
 
         <header>
             <span class="material-symbols-outlined phone_icon">phone_enabled</span>
@@ -44,7 +79,7 @@
         <nav>
             
           <div class="left">
-            <a href="../index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt="CFO Craft"></a>
+            <a href="../index.html"><img src="../assets/logo/logo.jpeg" alt="CFO Craft"></a>
           </div>
 
           <div class="mid">
@@ -163,7 +198,7 @@
 
             <div class="right">
 
-                <img src="https://cfocraft.com/wp-content/uploads/2023/05/4999651.png" alt="Blog">
+                <img src="../assets/images/4999651.png" alt="Blog">
 
             </div>
 
@@ -176,7 +211,7 @@
         <section class="section2">
 
             <div class="left">
-                <img src="https://cfocraft.com/wp-content/uploads/2023/06/Chatbots157.png" alt="">
+                <img src="../assets/images/Chatbots157.png" alt="">
             </div>
 
             <div class="right">
@@ -227,7 +262,7 @@
 
                 <div class="card">
                     <div class="top">
-                        <img src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots112.png" alt="Financial Systems">
+                        <img src="../assets/images/Chatbots112.png" alt="Financial Systems">
                         <h5>Financial Systems</h5>
                     </div>
                     <div class="bottom">
@@ -238,7 +273,7 @@
                 </div>
                 <div class="card">
                     <div class="top">
-                        <img src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots113.png" alt="Cashflow Management">
+                        <img src="../assets/images/Chatbots113.png" alt="Cashflow Management">
                         <h5>Cashflow Management</h5>
                     </div>
                     <div class="bottom">
@@ -250,7 +285,7 @@
                 </div>
                 <div class="card">
                     <div class="top">
-                        <img src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots114.png" alt="Financial Reporting">
+                        <img src="../assets/images/Chatbots114.png" alt="Financial Reporting">
                         <h5>Financial Systems</h5>
                     </div>
                     <div class="bottom">
@@ -266,7 +301,7 @@
                 
                 <div class="card">
                     <div class="top">
-                        <img src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots115.png" alt="Compliance Management">
+                        <img src="../assets/images/Chatbots115.png" alt="Compliance Management">
                         <h5>Compliance Management</h5>
                     </div>
                     <div class="bottom">
@@ -277,7 +312,7 @@
                 </div>
                 <div class="card">
                     <div class="top">
-                        <img src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots116.png" alt="Audit Assistance">
+                        <img src="../assets/images/Chatbots116.png" alt="Audit Assistance">
                         <h5>Audit Assistance</h5>
                     </div>
                     <div class="bottom">
@@ -488,7 +523,7 @@
 
             <div class="right contact-section">
                 <h2>Get in Touch</h2>
-                <form class="contact-form" autocomplete="off">
+                <form class="contact-form" autocomplete="off" action="../sendMail.php" method="POST">
                 
                   <!-- Name -->
                   <div class="form-group">
@@ -544,7 +579,7 @@
             <div class="info">
 
                 <div class="left">
-                    <a href="../index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt=""></a>
+                    <a href="../index.html"><img src="../assets/logo/logo.jpeg" alt=""></a>
                     <p>Our expert will guide you thoroughly in your journey. <br> Talk to us now to know the services we offer in <br> greater detail!</p>
                 </div>
 
@@ -609,6 +644,7 @@
 
     <!---- link script file ---->
 
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="../about.js"></script>
 
 </body>

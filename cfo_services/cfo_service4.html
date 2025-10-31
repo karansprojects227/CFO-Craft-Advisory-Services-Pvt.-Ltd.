@@ -20,15 +20,50 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
 </head>
 <body>
     
     <!---- Start coding for home page ---->
 
-    <main>
+    <main class="scroll-container main">
 
       <!---- Start coding for Header ---->
+
+      <i class="ri-menu-3-line menu_icon"></i>
+
+        <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+        <div class="side-menu" aria-hidden="true">
+            <i class="ri-close-large-line close_icon"></i>
+            <ul>
+                <li><a href="../index.html"><img src="../assets/logo/logo.jpeg" alt="CFO Craft"></a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class="cfo" isOpend="false"><a href="">CFO Services <span class="material-symbols-outlined down_icon1">keyboard_arrow_down</span></a></li>
+                    <div class="cfosubmenu">
+                        <li><a href="cfo_service1.html">CFO Services</a></li>
+                        <li><a href="cfo_service2.html">Virtual CFO Services</a></li>
+                        <li><a href="cfo_service3.html">Part-Time / Fractional CFO Services</a></li>
+                        <li><a href="cfo_service4.html">Outsourced CFO Services</a></li>
+                        <li><a href="cfo_service5.html">Interim CFO Services</a></li>
+                    </div>
+                <li class="business" isOpend="false"><a href="">Business Services <span class="material-symbols-outlined down_icon2">keyboard_arrow_down</span></a></li>
+                    <div class="busiesssubmenu">
+                        <li><a href="cfo_service1.html">CFO Services</a></li>
+                        <li><a href="../bussiness_services/business_service2.html">Business Strategy & Planning</a></li>
+                        <li><a href="../bussiness_services/business_service3.html">Business Process Transformation</a></li>
+                        <li><a href="../bussiness_services/business_service4.html">Business Intelligence & Analysis</a></li>
+                        <li><a href="../bussiness_services/business_service5.html">Business Process Optimising</a></li>
+                        <li><a href="../bussiness_services/business_service6.html">Cash Management and Funding</a></li>
+                    </div>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
 
         <header>
             <span class="material-symbols-outlined phone_icon">phone_enabled</span>
@@ -44,7 +79,7 @@
         <nav>
             
           <div class="left">
-            <a href="../index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt="CFO Craft"></a>
+            <a href="../index.html"><img src="../assets/logo/logo.jpeg" alt="CFO Craft"></a>
           </div>
 
           <div class="mid">
@@ -163,7 +198,7 @@
 
             <div class="right">
 
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/20220198_6242207-1.jpg" alt="Blog">
+                <img src="../assets/images/20220198_6242207-1.jpg" alt="Blog">
 
             </div>
 
@@ -183,19 +218,19 @@
             <div class="cards">
 
               <div class="card">
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/12953779_Jan-Business_team_3-1-1.jpg" alt="">
+                <img src="../assets/images/12953779_Jan-Business_team_3-1-1.jpg" alt="">
                 <h4>Strategic Financial Planning</h4>
                 <p>We provide long-term financial planning and analysis, including budgeting, forecasting, and strategic planning, to align your financial strategy with your business objectives.</p>
               </div>
 
               <div class="card">
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/budget_06-1.jpg" alt="">
+                <img src="../assets/images/budget_06-1.jpg" alt="">
                 <h4>Financial Reporting and Compliance</h4>
                 <p>Our CFOs ensure that your business complies with all relevant regulations and standards, providing accurate and timely financial reporting to support decision-making and build stakeholder confidence.</p>
               </div>
 
               <div class="card">
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/26432643_capitalization_company_4-1-1.jpg" alt="">
+                <img src="../assets/images/26432643_capitalization_company_4-1-1.jpg" alt="">
                 <h4>Cash Flow and Working Capital Management:</h4>
                 <p>Effective cash flow management is critical for maintaining business operations. We implement strategies to optimize cash flow and manage working capital efficiently.</p>
               </div>
@@ -205,19 +240,19 @@
             <div class="cards">
 
               <div class="card">
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/13_09_22_a_03__1_-removebg-preview.png" alt="">
+                <img src="../assets/images/13_09_22_a_03__1_-removebg-preview.png" alt="">
                 <h4>Cost Management and Efficiency Improvement</h4>
                 <p>We conduct thorough financial analysis to identify cost-saving opportunities and enhance operational efficiency without compromising on quality or growth potential.</p>
               </div>
 
               <div class="card">
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/23991117_6895861-1.jpg" alt="">
+                <img src="../assets/images/23991117_6895861-1.jpg" alt="">
                 <h4>Risk Management</h4>
                 <p>Protect your business from potential financial risks with our comprehensive risk management strategies. We help identify, assess, and mitigate risks to ensure business stability and resilience.</p>
               </div>
 
               <div class="card">
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/4949453_19730__1___1_-removebg-preview.webp" alt="">
+                <img src="../assets/images/4949453_19730__1___1_-removebg-preview.webp" alt="">
                 <h4>Fundraising and Capital Advisory</h4>
                 <p>Whether seeking capital for expansion or managing existing resources, our CFOs provide expert guidance on fundraising strategies and capital structure optimization.</p>
               </div>
@@ -231,7 +266,7 @@
               </div>
 
               <div class="card">
-                <img src="https://cfocraft.com/wp-content/uploads/2024/08/12290891_Wavy_Tech-10_Single-09-1-1.jpg" alt="">
+                <img src="../assets/images/12290891_Wavy_Tech-10_Single-09-1-1.jpg" alt="">
                 <h4>Performance Metrics and KPIs</h4>
                 <p>We establish key performance indicators (KPIs) to track and measure financial performance, providing you with actionable insights to drive business success.</p>
               </div>
@@ -258,7 +293,7 @@
 
                 <div class="card">
                   <div>
-                    <img src="https://cfocraft.com/wp-content/uploads/2024/07/entrepreneur.png" alt="">
+                    <img src="../assets/images/entrepreneur.png" alt="">
                   </div>
                   <h5>Small to Medium-Sized Enterprises (SMEs)</h5>
                   <p>Access top-level financial expertise without the cost and commitment of a full-time CFO..</p>
@@ -266,7 +301,7 @@
 
                 <div class="card">
                   <div>
-                    <img src="https://cfocraft.com/wp-content/uploads/2024/08/funding.png" alt="">
+                    <img src="../assets/images/funding.png" alt="">
                   </div>
                   <h5>Startups and Entrepreneurs</h5>
                   <p>Gain strategic financial guidance to navigate early-stage challenges and position your business for growth.</p>
@@ -274,7 +309,7 @@
 
                 <div class="card">
                   <div>
-                    <img src="https://cfocraft.com/wp-content/uploads/2024/08/company.png" alt="">
+                    <img src="../assets/images/company.png" alt="">
                   </div>
                   <h5>Established Companies</h5>
                   <p>Benefit from a fresh perspective and specialized financial management during periods of transition, growth, or restructuring.</p>
@@ -291,7 +326,7 @@
         <section class="section4">
 
             <div class="left">
-              <img src="https://cfocraft.com/wp-content/uploads/2024/08/8354271_3882746-1.jpg" alt="">
+              <img src="../assets/images/8354271_3882746-1.jpg" alt="">
             </div>
 
             <div class="right">
@@ -315,7 +350,7 @@
             </div>
 
             <div class="right">
-              <img src="https://cfocraft.com/wp-content/uploads/2024/08/18551049__1_-removebg-preview.webp" alt="">
+              <img src="../assets/images/18551049__1_-removebg-preview.webp" alt="">
             </div>
 
         </section>
@@ -333,7 +368,7 @@
 
             <div class="right contact-section">
                 <h2>Get in Touch</h2>
-                <form class="contact-form" autocomplete="off">
+                <form class="contact-form" autocomplete="off" action="../sendMail.php" method="POST">
                 
                   <!-- Name -->
                   <div class="form-group">
@@ -390,7 +425,7 @@
             <div class="info">
 
                 <div class="left">
-                    <a href="../index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt=""></a>
+                    <a href="../index.html"><img src="../assets/logo/logo.jpeg" alt=""></a>
                     <p>Our expert will guide you thoroughly in your journey. <br> Talk to us now to know the services we offer in <br> greater detail!</p>
                 </div>
 
@@ -455,6 +490,7 @@
 
     <!---- link script file ---->
 
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="../about.js"></script>
 
 </body>

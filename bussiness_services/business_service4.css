@@ -1,6 +1,12 @@
 /* --- Start CSS stlying for home page --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --p_text_size:3.6vw;
+  --sub_headings:6.5vw;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -22,15 +28,92 @@ html, body {
     overflow: hidden; /* disable body scroll */
 }
 
-main {
-    width: 100%;
-    height: 100%; 
+body{
     overflow-x:hidden;
     overflow-y: auto;  /* scroll only when needed */
     position: relative;
 }
 
-/* --- Start Header CSS --- */
+.main .menu_icon{
+    position:absolute;
+    display:none;
+    top:1%;
+    right:2%;
+    color:#FFFF;
+    font-size:6.5vw;
+    z-index:9999;
+}
+
+.side-menu{
+    position:fixed;
+    right:0;
+    height:100%;
+    width:200px;
+    background:linear-gradient(180deg,#0b1220, #071226);
+    transform:translateX(100%);
+    transition:transform 300ms cubic-bezier(.2,.9,.3,1);
+    padding:16px;
+    z-index:9999;
+    overflow:auto;
+    box-shadow: 8px 0 24px rgba(2,6,23,0.6);
+}
+.cfosubmenu{
+    padding-left:.8rem;
+    display:none;
+}
+.busiesssubmenu{
+    padding-left:.8rem;
+    display:none;
+}
+.main .close_icon{
+    position:absolute;
+    top:2%;
+    right:5%;
+    color:#FFFF;
+    font-size:6.5vw;
+    z-index:99999;
+}
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap:6px;
+}
+.side-menu a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #FFFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+.side-menu ul li a img{
+    margin-left:40px;
+    width:60px;
+    border-radius:5px;
+}
+/* overlay */
+.overlay{
+  position:fixed;
+  inset:56px 0 0 0;
+  background:rgba(2,6,23,0.6);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 300ms cubic-bezier(.2,.9,.3,1);
+  z-index:45;
+}
+.overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.side-menu.open{transform:translateX(0)}
+.side-menu a:hover{background:rgba(6,182,212,0.06); color:#06b6d4}
+.side-menu a:focus{outline:2px solid rgba(6,182,212,0.18)}
 
 header{
      background-color: #313131;
@@ -117,7 +200,7 @@ nav .mid{
     .dropdown_box{
         position:fixed;
         left: 50%;
-        top:20%;
+        top:5%;
         transform:translateX(-50%);
         width:95vw;
         height:58vh;
@@ -216,34 +299,40 @@ nav .right{
 }
 nav .right button{
     height:80%;
-    background: #9d0505;
-    color:#ffff;
+    backdrop-filter:blur(10px);
     border:none;
     padding:12px 28px;
     cursor: pointer;
     font-size:16px;
-    border-radius:1rem;
+    border-radius:2rem;
     transition: background 0.3s ease, color 0.3s ease;
+    background-color:#ca0b0b;
     box-shadow: 0 3px 8px rgba(10, 37, 64, 0.6);
+    position: relative;
+    overflow: hidden;
 }
 nav .right button a{
     color:#FFFF;
     position: relative;
+    z-index:2;
 }
-nav .right button a::after {
+nav .right button::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -6%; 
-  width: 0;
-  height: 3px; /* underline thickness */
-  background: linear-gradient(to right, #9d0505, #cccccc); /* gradient underline */
-  transition: width 0.4s ease; 
-  border-radius: 2px; /* smooth rounded underline */
+  bottom:-100%;
+  left:0%; 
+  width:100%;
+  height:100%;
+  border-radius:1rem;
+  background: #FFFF; /* gradient underline */
+  transition:all 0.5s ease;
 }
 
-nav .right button a:hover::after {
-  width: 100%; /* underline expands left to right */
+nav .right button:hover::after {
+    bottom:0;
+}
+nav .right button:hover a {
+    color:#000;
 }
 
 /* --- End Nav CSS --- */
@@ -279,6 +368,7 @@ nav .right button a:hover::after {
     width:7rem;
     height:.15rem;
     background:#313131;
+    border-radius:50%;
     bottom:20%;
 }
 .section1 .left p{
@@ -291,36 +381,43 @@ nav .right button a:hover::after {
     margin-bottom:.6rem;  
 }
 .section1 .left button{
+    position: relative;
     width:fit-content;
-    background: #9d0505;
-    color:#ffff;
+    backdrop-filter:blur(10px);
     border:none;
     padding:12px 28px;
     cursor: pointer;
     font-size:16px;
-    border-radius:.5rem;
+    border-radius:2rem;
     transition: background 0.3s ease, color 0.3s ease;
+    background-color:#ca0b0b;
     box-shadow: 0 3px 8px rgba(10, 37, 64, 0.6);
+    overflow: hidden;
+}
+/* after element for hover animation */
+.section1 .left button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: #fff;
+    border-radius: 2rem;
+    transition: height 0.4s ease;
+    z-index: -1; /* keeps it behind the text */
 }
 .section1 .left button a{
     color:#FFFF;
-    position: relative;
 }
-.section1 .left button a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6%; 
-  width: 0;
-  height: 3px; /* underline thickness */
-  background: linear-gradient(to right, #9d0505, #cccccc); /* gradient underline */
-  transition: width 0.4s ease; 
-  border-radius: 2px; /* smooth rounded underline */
+/* hover effect */
+.section1 .left button:hover::after {
+    height: 100%;
+}
+.section1 .left button:hover a{
+    color:#000;
 }
 
-.section1 .left button a:hover::after {
-  width: 100%; /* underline expands left to right */
-}
 .section1 .right{
     width:45%;
     height:100%;
@@ -376,6 +473,7 @@ nav .right button a:hover::after {
     height:.15rem;
     background:#313131;
     bottom:20%;
+    border-radius:50%;
 }
 .section2 .right p{
     word-spacing:.03rem;
@@ -417,6 +515,7 @@ nav .right button a:hover::after {
     bottom:20%;
     left:50%;
     transform:translateX(-50%);
+    border-radius:50%;
 }
 .section3 .container{
     width:100%;
@@ -467,7 +566,7 @@ nav .right button a:hover::after {
 
 .section5 {
   width: 100%;
-  min-height: 100vh;
+  height:fit-content;
   padding: 3rem 1rem;
   background: #eef1f6;
 }
@@ -488,7 +587,7 @@ nav .right button a:hover::after {
   height: 4px;
   background-color: #313131;
   margin: 12px auto 0 auto;
-  border-radius: 2px;
+  border-radius:50%;
 }
 
 /* FAQ grid layout */
@@ -621,6 +720,7 @@ nav .right button a:hover::after {
     width:7rem;
     height:.15rem;
     background:#313131;
+    border-radius:50%;
     bottom:20%;
 }
 .section6 .left .info{
@@ -722,22 +822,42 @@ textarea {
   resize: none;
 }
 
-.btn-submit {
-  width:40%;
-  padding: 14px;
-  background: #9d0505;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.btn-submit{
+    position: relative;
+    width:fit-content;
+    backdrop-filter:blur(10px);
+    border:none;
+    padding:12px 28px;
+    cursor: pointer;
+    font-size:16px;
+    border-radius:2rem;
+    transition: background 0.3s ease, color 0.3s ease;
+    background-color:#ca0b0b;
+    color:#FFFF;
+    box-shadow: 0 3px 8px rgba(10, 37, 64, 0.6);
+    overflow: hidden;
 }
 
+/* after element for hover animation */
+.btn-submit::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: #fff;
+    border-radius: 2rem;
+    transition: height 0.4s ease;
+    z-index: -1; /* keeps it behind the text */
+}
+
+/* hover effect */
+.btn-submit:hover::after {
+    height: 100%;
+}
 .btn-submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    color:#000;
 }
 
 /* --- End Section6 CSS ---  */
@@ -879,6 +999,256 @@ footer .manage .right h6 .span2{
     cursor: pointer;
 }
 /* --- End Footer CSS --- */
+
+/* --- Responsive design --- */
+
+    /* --- Phone Responsive --- */
+    @media (max-width:426px) {
+
+        header a{
+            justify-content:center;
+            font-size:2.72vw;
+        }
+
+        header span{
+            font-size:2.5vw;
+        }
+        
+        nav{
+            display: none;
+        }
+
+        .main .menu_icon{
+            display:block;
+        }
+
+        .section1, .section2, .section3, .section5, .section6{
+            height:fit-content;
+            flex-direction:column-reverse;
+        }
+
+        .section1 .right{
+            width:100%;
+            padding:5vw;
+        }
+
+        .section1 .right img{
+            width:70%;
+            margin-block:2rem;
+        }
+
+        .section1 .left{
+            width:100%;
+            padding: 0%;
+        }
+
+        .section1 .left h3{
+            font-size:var(--sub_headings);
+            margin-left:5vw;
+        }
+
+        .section1 .left .about_line{
+            height:2px;
+        }
+
+        .section1 .left p{
+            text-align:justify;
+            padding:5vw;
+            margin-bottom:0;
+            font-size:var(--p_text_size);
+        }
+
+        .section1 .left button{
+            font-size:4vw;
+            padding:.8rem 1.5rem;
+        }
+
+        .section2{
+            flex-direction:column;
+            padding:5vw;
+            padding-top:3.5rem;
+            padding-right:5vw;
+        }
+
+        .section2 .left{
+            width:100%;
+        }
+
+        .section2 .left img{
+            width:70%;
+            margin-bottom:2rem;
+        }
+
+        .section2 .right{
+            width:100%;
+            flex-direction:column;
+            padding-right:5vw;
+        }
+
+        .section2 .right h3{
+            font-size:var(--sub_headings);
+        }
+
+        .section2 .right .about_line{
+            height:2px;
+            bottom:15%;
+        }
+
+        .section2 .right p{
+            width:fit-content;
+            font-size:var(--p_text_size);
+            text-align:justify;
+        }
+
+        .section3 h3{
+            font-size:var(--sub_headings);
+        }
+
+        .section3 .container{
+            height:fit-content;
+        }
+
+        .section3 .container .card_box{
+            flex-direction:column;
+            padding:5vw;
+        }
+
+        .section3 .container .card_box .card {
+            width:100%;
+            margin-bottom:1rem;
+        }
+
+        .section3 .container .last_card_box {
+            height:fit-content;
+            padding:5vw;
+        }
+
+        .section3 .container .last_card_box .card{
+            width:100%;
+            height:fit-content;
+        }
+
+        .section5 h1{
+            font-size:var(--sub_headings);
+        }
+
+        .section5 summary{
+            font-size:4vw;
+        }
+
+        .section6 .left{
+            width:100%;
+            padding:8vw;
+        }
+
+        .section6 h3{
+            font-size:var(--sub_headings);
+            text-align:center;
+            line-height:1.2;
+        }
+
+        .section6 .about_line{
+            height:2px;
+            border-radius:50%;
+            bottom:25%;
+            left:50%;
+            transform:translateX(-50%);
+        }        
+
+        .section6 .left .info{
+            width:100%;
+        }
+
+        .section6 .right{
+            width:100%;
+        }
+
+        .contact-section h2{
+            font-size:var(--sub_headings);
+        }
+
+        .form-group input, .form-group select, .form-group textarea{
+            font-size:var(--p_text_size);
+        }
+
+        .form-group label{
+            font-size:4vw;
+        }
+
+        .section6 .left .info .text p{
+            font-size:var(--p_text_size);
+        }
+
+        .btn-submit{
+            font-size:4vw;
+            padding:.8rem 1.5rem;
+        }
+
+        footer {
+            height:fit-content;
+        }
+
+        footer .info {
+            flex-direction:column;
+            height:fit-content;
+        }
+
+        footer .info .left ,footer .info .middle, footer .info .right {
+            width:100%;
+            height:fit-content;
+            padding-top: 0;
+        }
+
+        footer .info .left img {
+            margin-block:4vw;
+        }
+
+        footer .info .middle h5 , footer .info .right h5{
+            font-size:var(--sub_headings);
+            padding-bottom:0;
+        }
+
+        footer .info .middle li {
+            font-size:4vw;
+        }
+
+        footer .info .right .contact_info_box .contact_info_box_right {
+            padding-left:2vw;
+        }
+
+        footer .info .right .contact_info_box .contact_info_box_left .phone_icon {
+            margin-top:100px;
+        }
+
+        footer .manage {
+            flex-direction:column;
+            height:fit-content;
+        }
+
+        footer .manage .left ,footer .manage .right{
+            width:100%;
+            height:fit-content;
+            padding-top: 0;
+        }
+
+        footer .manage .left{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-bottom:1rem;
+        }
+
+        footer .manage .right h6 {
+            text-align:center;
+            font-size:5vw;
+            padding-bottom:.5rem;
+        }
+
+        footer .info .left p {
+            font-size:var(--p_text_size);
+        }
+
+    }
 
 /* --- End Main CSS --- */
 

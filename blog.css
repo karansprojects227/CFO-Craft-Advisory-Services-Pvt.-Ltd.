@@ -1,6 +1,12 @@
 /* --- Start CSS stlying for home page --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --p_text_size:3.6vw;
+  --sub_headings:6.5vw;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -22,13 +28,92 @@ html, body {
     overflow: hidden; /* disable body scroll */
 }
 
-main {
-    width: 100%;
-    height: 100%; 
+body{
     overflow-x:hidden;
     overflow-y: auto;  /* scroll only when needed */
     position: relative;
 }
+
+.main .menu_icon{
+    position:absolute;
+    display:none;
+    top:1%;
+    right:2%;
+    color:#FFFF;
+    font-size:6.5vw;
+    z-index:9999;
+}
+
+.side-menu{
+    position:fixed;
+    right:0;
+    height:100%;
+    width:200px;
+    background:linear-gradient(180deg,#0b1220, #071226);
+    transform:translateX(100%);
+    transition:transform 300ms cubic-bezier(.2,.9,.3,1);
+    padding:16px;
+    z-index:9999;
+    overflow:auto;
+    box-shadow: 8px 0 24px rgba(2,6,23,0.6);
+}
+.cfosubmenu{
+    padding-left:.5rem;
+    display:none;
+}
+.busiesssubmenu{
+    padding-left:.5rem;
+    display:none;
+}
+.main .close_icon{
+    position:absolute;
+    top:2%;
+    right:5%;
+    color:#FFFF;
+    font-size:6.5vw;
+    z-index:99999;
+}
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap:6px;
+}
+.side-menu a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #FFFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+.side-menu ul li a img{
+    margin-left:40px;
+    width:60px;
+    border-radius:5px;
+}
+/* overlay */
+.overlay{
+  position:fixed;
+  inset:56px 0 0 0;
+  background:rgba(2,6,23,0.6);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 300ms cubic-bezier(.2,.9,.3,1);
+  z-index:45;
+}
+.overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.side-menu.open{transform:translateX(0)}
+.side-menu a:hover{background:rgba(6,182,212,0.06); color:#06b6d4}
+.side-menu a:focus{outline:2px solid rgba(6,182,212,0.18)}
 
 header{
      background-color: #313131;
@@ -115,7 +200,7 @@ nav .mid{
     .dropdown_box{
         position:fixed;
         left: 50%;
-        top:20%;
+        top:10%;
         transform:translateX(-50%);
         width:95vw;
         height:58vh;
@@ -214,34 +299,40 @@ nav .right{
 }
 nav .right button{
     height:80%;
-    background: #9d0505;
-    color:#ffff;
+    backdrop-filter:blur(10px);
     border:none;
     padding:12px 28px;
     cursor: pointer;
     font-size:16px;
-    border-radius:1rem;
+    border-radius:2rem;
     transition: background 0.3s ease, color 0.3s ease;
+    background-color:#ca0b0b;
     box-shadow: 0 3px 8px rgba(10, 37, 64, 0.6);
+    position: relative;
+    overflow: hidden;
 }
 nav .right button a{
     color:#FFFF;
     position: relative;
+    z-index:2;
 }
-nav .right button a::after {
+nav .right button::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -6%; 
-  width: 0;
-  height: 3px; /* underline thickness */
-  background: linear-gradient(to right, #9d0505, #cccccc); /* gradient underline */
-  transition: width 0.4s ease; 
-  border-radius: 2px; /* smooth rounded underline */
+  bottom:-100%;
+  left:0%; 
+  width:100%;
+  height:100%;
+  border-radius:1rem;
+  background: #FFFF; /* gradient underline */
+  transition:all 0.5s ease;
 }
 
-nav .right button a:hover::after {
-  width: 100%; /* underline expands left to right */
+nav .right button:hover::after {
+    bottom:0;
+}
+nav .right button:hover a {
+    color:#000;
 }
 
 /* --- End Nav CSS --- */
@@ -277,6 +368,7 @@ nav .right button a:hover::after {
     height:.15rem;
     background:#313131;
     bottom:20%;
+    border-radius:50%;
 }
 .section1 .left p{
     word-spacing:.03rem;
@@ -511,6 +603,147 @@ nav .right button a:hover::after {
         cursor: pointer;
     }
     /* --- End Footer CSS --- */
+
+    /* --- Responsive design --- */
+
+    /* --- Phone Responsive --- */
+
+    @media (max-width:426px) {
+        header a{
+            justify-content:center;
+            font-size:2.72vw;
+        }
+
+        header span{
+            font-size:2.5vw;
+        }
+        
+        nav{
+            display: none;
+        }
+
+        .main .menu_icon{
+            display:block;
+        }
+
+        .section1 {
+            height:fit-content;
+            flex-direction:column-reverse;
+        }
+
+        .section1 .right {
+            width:100%;
+            height:fit-content;
+            padding-block:2.8rem;
+        }
+
+        .section1 .left h3 {
+            font-size:var(--sub_headings);
+            padding-bottom:.5rem;
+        }
+
+        .section1 .left {
+            width:100%;
+            height:fit-content;
+            padding:5vw;
+        }
+
+        .section1 .left .about_line {
+            height:2px;
+            border-radius:50%;
+            bottom:15%;
+        }
+
+        .section1 .left p {
+            line-height: 1.5rem;
+            font-size:var(--p_text_size);
+            padding-bottom: .5rem;
+            text-align:justify;
+        }
+
+        .section2 {
+            height:fit-content;
+            flex-direction:column;
+        }
+
+        .section2 .card {
+            width:100%;
+            height:fit-content;
+            margin-bottom:1rem;
+        }
+
+        .section2 .card .bottom h5 {
+            font-size:4.8vw;
+        }
+
+        .section2 .card .bottom p{
+            font-size:var(--p_text_size);
+        }
+
+        footer {
+            height:fit-content;
+        }
+
+        footer .info {
+            flex-direction:column;
+            height:fit-content;
+        }
+
+        footer .info .left ,footer .info .middle, footer .info .right {
+            width:100%;
+            height:fit-content;
+            padding-top: 0;
+        }
+
+        footer .info .left img {
+            margin-block:4vw;
+        }
+
+        footer .info .middle h5 , footer .info .right h5{
+            font-size:var(--sub_headings);
+            padding-bottom:0;
+        }
+
+        footer .info .middle li {
+            font-size:4vw;
+        }
+
+        footer .info .right .contact_info_box .contact_info_box_right {
+            padding-left:2vw;
+        }
+
+        footer .info .right .contact_info_box .contact_info_box_left .phone_icon {
+            margin-top:100px;
+        }
+
+        footer .manage {
+            flex-direction:column;
+            height:fit-content;
+        }
+
+        footer .manage .left ,footer .manage .right{
+            width:100%;
+            height:fit-content;
+            padding-top: 0;
+        }
+
+        footer .manage .left{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-bottom:1rem;
+        }
+
+        footer .manage .right h6 {
+            text-align:center;
+            font-size:5vw;
+            padding-bottom:.5rem;
+        }
+
+        footer .info .left p{
+            font-size:var(--p_text_size);
+        }
+    }
 
 /* --- End Main CSS --- */
 

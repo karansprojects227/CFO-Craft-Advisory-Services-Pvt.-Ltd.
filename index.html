@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CFO Craft Adversiory Services Pvt. Ltd.</title>
 
     <!---- link css file ---->
 
     <link rel="stylesheet" href="style.css">
+
+    <!---- fav icon ---->
+
+    <link rel="shortcut icon" href="favicon/favicon.png" type="image/png">
 
     <!---- link remix icon CDN ---->
 
@@ -20,15 +24,67 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
 </head>
 <body>
+
+    <!-- Loader -->
+
+    <div class="loader">
+
+        <h1>CFO CRAFT</h1>
+
+        <div class="services">
+            <h2>CFO Service</h1>
+            <h2>Business Strategy & Planning</h1>
+            <h2>Business Process Transformation</h1>
+            <h2>Business Process optimising</h1>
+            <h2>Business Intelligence & Analysis</h1>
+            <h2>Cash Management and Funding</h1>
+        </div>
+        
+    </div>
     
     <!---- Start coding for home page ---->
 
-    <main class="main">
+    <main class="scroll-container main">
 
         <!---- Start coding for Header ---->
+
+        <i class="ri-menu-3-line menu_icon"></i>
+
+        <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+        <div class="side-menu" aria-hidden="true">
+            <i class="ri-close-large-line close_icon"></i>
+            <ul>
+                <li><a href="index.html"><img src="/assets/logo/logo.jpeg" alt="CFO Craft"></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="cfo" isOpend="false"><a href="">CFO Services <span class="material-symbols-outlined down_icon1">keyboard_arrow_down</span></a></li>
+                    <div class="cfosubmenu">
+                        <li><a href="cfo_services/cfo_service1.html">CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service2.html">Virtual CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service3.html">Part-Time / Fractional CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service4.html">Outsourced CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service5.html">Interim CFO Services</a></li>
+                    </div>
+                <li class="business" isOpend="false"><a href="">Business Services <span class="material-symbols-outlined down_icon2">keyboard_arrow_down</span></a></li>
+                    <div class="busiesssubmenu">
+                        <li><a href="cfo_services/cfo_service1.html">CFO Services</a></li>
+                        <li><a href="bussiness_services/business_service2.html">Business Strategy & Planning</a></li>
+                        <li><a href="bussiness_services/business_service3.html">Business Process Transformation</a></li>
+                        <li><a href="bussiness_services/business_service4.html">Business Intelligence & Analysis</a></li>
+                        <li><a href="bussiness_services/business_service5.html">Business Process Optimising</a></li>
+                        <li><a href="bussiness_services/business_service6.html">Cash Management and Funding</a></li>
+                    </div>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
 
         <header>
             <span class="material-symbols-outlined phone_icon">phone_enabled</span>
@@ -44,7 +100,7 @@
         <nav>
             
           <div class="left">
-            <a href="index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt="CFO Craft"></a>
+            <a href="index.html"><img src="/assets/logo/logo.jpeg" alt="CFO Craft"></a>
           </div>
 
           <div class="mid">
@@ -142,7 +198,9 @@
           </div>
 
           <div class="right">
-            <button type="button"><a href="contact.html">Contact Us</a></button>
+            <button type="button">
+                <a href="contact.html">Contact Us</a>
+            </button>
           </div>
 
         </nav>
@@ -150,7 +208,7 @@
         <!---- End coding for nav ---->
 
         <!---- Start coding for section1 ---->
-
+        
         <section class="section1">
 
             <div class="left">
@@ -176,7 +234,7 @@
 
             <div class="cfo_vdo">
                 <div class="vdo">
-                    <video src="https://cfocraft.com/wp-content/uploads/2023/07/3D-Explainer-Video_Low_V02.mp4" controls></video>
+                    <video src="/assets/videos/about-CFO.mp4" controls></video>
                 </div>
             </div>
 
@@ -199,29 +257,29 @@
 
                 <div class="left">
                     <div class="cfo_service">
-                        <img class="services" src="https://cfocraft.com/wp-content/uploads/2023/06/Chatbots154.png" alt="">CFO Service
+                        <img class="services" src="/assets/images/Chatbots154.png" alt="">CFO Service
                     </div>
                     <div class="business_strategy">
-                        <img class="services" src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots104.png" alt="">Business Strategy & Planning
+                        <img class="services" src="/assets/images/Chatbots104.png" alt="">Business Strategy & Planning
                     </div>
                     <div class="business_process_t">
-                        <img class="services" src="https://cfocraft.com/wp-content/uploads/2023/06/Chatbots155.png" alt="">Business Process Transformation
+                        <img class="services" src="/assets/images/Chatbots155.png" alt="">Business Process Transformation
                     </div>
                     <div class="business_process_0">
-                        <img class="services" src="https://cfocraft.com/wp-content/uploads/2023/06/Chatbots156.png" alt="">Business Process optimising
+                        <img class="services" src="/assets/images/Chatbots156.png" alt="">Business Process optimising
                     </div>
                     <div class="business_intellegence">
-                        <img class="services" src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots107.png" alt="">Business Intelligence & Analysis
+                        <img class="services" src="/assets/images/Chatbots107.png" alt="">Business Intelligence & Analysis
                     </div>
                     <div class="cash_management">
-                        <img class="services" src="https://cfocraft.com/wp-content/uploads/2023/05/Chatbots108.png" alt="">Cash Management and Funding
+                        <img class="services" src="/assets/images/Chatbots108.png" alt="">Cash Management and Funding
                     </div>
                 </div>
 
                 <div class="right">
 
                     <div class="service_img_con">
-                        <img src="https://cfocraft.com/wp-content/uploads/2023/04/tab-service-1-min.webp" alt="" class="service_img_con_url">
+                        <img src="/assets/images/CFO-service.webp" alt="" class="service_img_con_url">
                     </div>
 
                     <div class="service_content_con">
@@ -254,7 +312,7 @@
         <section class="section4">
 
             <div class="left">
-                <img src="https://cfocraft.com/wp-content/uploads/2023/06/Chatbots157.png" alt="">
+                <img src="/assets/images/Chatbots157.png" alt="">
             </div>
 
             <div class="right">
@@ -339,7 +397,7 @@
         <!---- Start coding for section5 ---->
 
         <section class="section5">
-          <h1>What's on your mind</h1>
+          <h1>Frequently Asked Questions</h1>
                 
           <div class="container">
             <div class="faq-items">
@@ -397,7 +455,7 @@
             <div class="info">
 
                 <div class="left">
-                    <a href="index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt=""></a>
+                    <a href="index.html"><img src="/assets/logo/logo.jpeg" alt=""></a>
                     <p>Our expert will guide you thoroughly in your journey. <br> Talk to us now to know the services we offer in <br> greater detail!</p>
                 </div>
 
@@ -461,7 +519,7 @@
     <!---- End coding for home page ---->
 
     <!---- link script file ---->
-
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
 
 </body>

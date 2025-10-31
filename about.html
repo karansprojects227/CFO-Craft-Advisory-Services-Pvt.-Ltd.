@@ -17,6 +17,9 @@
     <!---- link google icon CDN ---->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
+    <!-- link locomotive -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
@@ -26,9 +29,43 @@
     
     <!---- Start coding for home page ---->
 
-    <main>
+    <main class="scroll-container main">
 
         <!---- Start coding for Header ---->
+
+        <i class="ri-menu-3-line menu_icon"></i>
+
+        <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+        <div class="side-menu" aria-hidden="true">
+            <i class="ri-close-large-line close_icon"></i>
+            <ul>
+                <li><a href="index.html"><img src="/assets/logo/logo.jpeg" alt="CFO Craft"></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="cfo" isOpend="false"><a href="">CFO Services <span class="material-symbols-outlined down_icon1">keyboard_arrow_down</span></a></li>
+                    <div class="cfosubmenu">
+                        <li><a href="cfo_services/cfo_service1.html">CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service2.html">Virtual CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service3.html">Part-Time / Fractional CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service4.html">Outsourced CFO Services</a></li>
+                        <li><a href="cfo_services/cfo_service5.html">Interim CFO Services</a></li>
+                    </div>
+                <li class="business" isOpend="false"><a href="">Business Services <span class="material-symbols-outlined down_icon2">keyboard_arrow_down</span></a></li>
+                    <div class="busiesssubmenu">
+                        <li><a href="cfo_services/cfo_service1.html">CFO Services</a></li>
+                        <li><a href="bussiness_services/business_service2.html">Business Strategy & Planning</a></li>
+                        <li><a href="bussiness_services/business_service3.html">Business Process Transformation</a></li>
+                        <li><a href="bussiness_services/business_service4.html">Business Intelligence & Analysis</a></li>
+                        <li><a href="bussiness_services/business_service5.html">Business Process Optimising</a></li>
+                        <li><a href="bussiness_services/business_service6.html">Cash Management and Funding</a></li>
+                    </div>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>ī
+        </div>
 
         <header>
             <span class="material-symbols-outlined phone_icon">phone_enabled</span>
@@ -44,7 +81,7 @@
         <nav>
             
           <div class="left">
-            <a href="index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt="CFO Craft"></a>
+            <a href="index.html"><img src="/assets/logo/logo.jpeg" alt="CFO Craft"></a>
           </div>
 
           <div class="mid">
@@ -162,7 +199,7 @@
 
             <div class="cfo_vdo">
                 <div class="vdo">
-                    <video src="https://cfocraft.com/wp-content/uploads/2023/07/3D-Explainer-Video_Low_V02.mp4" controls></video>
+                    <video src="/assets/videos/about-CFO.mp4" controls></video>
                 </div>
             </div>
 
@@ -182,7 +219,7 @@
 
                     <div class="team_profile">
                         <div class="profile">
-                            <img src="https://cfocraft.com/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-07-at-2.22.07-PM-300x300.jpeg" alt="Sudhir Gawandi(Managing Director)">
+                            <img src="/assets/teams/Sudhir Gawandi.jpeg" alt="Sudhir Gawandi(Managing Director)">
                         </div>
                         <h4>Sudhir Gawandi</h4>
                         <h5>Managing Director</h5>
@@ -202,7 +239,7 @@
 
                     <div class="team_profile">
                         <div class="profile">
-                            <img src="https://cfocraft.com/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-07-at-2.24.29-PM-300x300.jpeg" alt="Mukesh Gupta(Director- Assurance)">
+                            <img src="/assets/teams/Mukesh Gupta.jpeg" alt="Mukesh Gupta(Director- Assurance)">
                         </div>
                         <h4>Mukesh Gupta</h4>
                         <h5>Director- Assurance</h5>
@@ -225,7 +262,7 @@
 
                     <div class="team_profile">
                         <div class="profile">
-                            <img src="https://cfocraft.com/wp-content/uploads/2024/07/Sanika-Photo-Black-Background-150x150.jpg" alt="Sanika Gawandi(Director- CFO Services)">
+                            <img src="/assets/teams/Sanika Gawandi.jpg" alt="Sanika Gawandi(Director- CFO Services)">
                         </div>
                         <h4>Sanika Gawandi</h4>
                         <h5>Director- CFO Services</h5>
@@ -244,7 +281,7 @@
 
                     <div class="team_profile">
                         <div class="profile">
-                            <img src="https://cfocraft.com/wp-content/uploads/2024/04/Asmita-Vagal-80004799-e1714376866393-150x150.jpg" alt="Asmita Vagal(Principal Consultant)">
+                            <img src="/assets/teams/Asmita Vagal.jpg" alt="Asmita Vagal(Principal Consultant)">
                         </div>
                         <h4>Asmita Vagal</h4>
                         <h5>Principal Consultant</h5>
@@ -269,33 +306,110 @@
 
         <section class="section3">
 
-            <h3>How do we work?</h3>
+            <div class="laptop-responsive">
+                <h3>How do we work?</h3>
 
-            <div class="big_circle">
-                <div class="center_p_box">
-                    <p></p>
+                <div class="big_circle">
+                    <div class="center_p_box">
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="small_circle small_circle1" data="0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8-1.457 0-2.834-.313-4.04-.86L3 20l1.144-3.431C3.417 15.25 3 13.672 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    <h5>Initial <br>Consultation</h5>
+                </div>
+                <div class="small_circle small_circle2" data="4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6v6H9V7zM4 17h16M4 17l4 4m-4-4l4-4m16 0h-4m4 0l-4 4m4-4l-4-4"/></svg>
+                    <h5>Execution and <br>Implementation</h5>
+                </div>
+                <div class="small_circle small_circle3" data="1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6h6m-6 4h6m-6 4h4m4-10h2a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2h2l1-2h4l1 2z"/></svg>
+                    <h5>Needs <br>Assessment</h5>
+                </div>
+                <div class="small_circle small_circle4" data="3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l-3-3m0 0l3-3m-3 3h12a3 3 0 013 3v1m-6-4l3-3m0 0l-3-3m3 3H9a3 3 0 01-3-3V6"/></svg>
+                    <h5>Collaborative <br>Planning</h5>
+                </div>
+                <div class="small_circle small_circle5" data="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 11h10M7 15h7M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2z"/></svg>
+                    <h5>Proposed <br>Action Plan</h5>
                 </div>
             </div>
 
-            <div class="small_circle small_circle1" data="0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8-1.457 0-2.834-.313-4.04-.86L3 20l1.144-3.431C3.417 15.25 3 13.672 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-                <h5>Initial <br>Consultation</h5>
-            </div>
-            <div class="small_circle small_circle2" data="4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6v6H9V7zM4 17h16M4 17l4 4m-4-4l4-4m16 0h-4m4 0l-4 4m4-4l-4-4"/></svg>
-                <h5>Execution and <br>Implementation</h5>
-            </div>
-            <div class="small_circle small_circle3" data="1">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6h6m-6 4h6m-6 4h4m4-10h2a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2h2l1-2h4l1 2z"/></svg>
-                <h5>Needs <br>Assessment</h5>
-            </div>
-            <div class="small_circle small_circle4" data="3">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l-3-3m0 0l3-3m-3 3h12a3 3 0 013 3v1m-6-4l3-3m0 0l-3-3m3 3H9a3 3 0 01-3-3V6"/></svg>
-                <h5>Collaborative <br>Planning</h5>
-            </div>
-            <div class="small_circle small_circle5" data="2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 11h10M7 15h7M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2z"/></svg>
-                <h5>Proposed <br>Action Plan</h5>
+            <div class="mobile-friendly">
+
+                <h3>How do we work?</h3>
+
+                <div class="works">
+
+                    <div class="work">
+
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#FFFF" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8-1.457 0-2.834-.313-4.04-.86L3 20l1.144-3.431C3.417 15.25 3 13.672 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                            <h5>Initial <br>Consultation</h5>
+                        </div>
+
+                        <div class="para">
+                            <p>We start by scheduling an initial consultation to understand your organization, its challenges, and your specific needs. This is an opportunity for us to gather relevant information and clarify your goals.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="work">
+
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6h6m-6 4h6m-6 4h4m4-10h2a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2h2l1-2h4l1 2z"/></svg>
+                            <h5>Needs <br>Assessment</h5>
+                        </div>
+
+                        <div class="para">
+                            <p>Following the initial consultation, we conduct a thorough needs assessment. This may involve reviewing your existing processes, analyzing data, conducting interviews, and gathering relevant information to gain a comprehensive understanding of your situation.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="work">
+
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 11h10M7 15h7M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2z"/></svg>
+                            <h5>Proposed <br>Action Plan</h5>
+                        </div>
+
+                        <div class="para">
+                            <p>Based on the needs assessment, we prepare a detailed proposal that outlines our recommended approach, scope of work, deliverables, timeline, and cost. We discuss the proposal with you, address any questions or concerns, and once agreed upon, we formalize the agreement.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="work">
+
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l-3-3m0 0l3-3m-3 3h12a3 3 0 013 3v1m-6-4l3-3m0 0l-3-3m3 3H9a3 3 0 01-3-3V6"/></svg>
+                            <h5>Collaborative <br>Planning</h5>
+                        </div>
+
+                        <div class="para">
+                            <p>We work closely with you and your team to develop a collaborative plan. This includes setting clear objectives, defining key milestones, and identifying the resources and responsibilities required from both parties.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="work">
+
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#313131" stroke-width="2" viewBox="0 0 24 24" width="30" height="30">  <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6v6H9V7zM4 17h16M4 17l4 4m-4-4l4-4m16 0h-4m4 0l-4 4m4-4l-4-4"/></svg>
+                            <h5>Execution and <br>Implementation</h5>
+                        </div>
+
+                        <div class="para">
+                            <p>With the plan in place, we initiate the execution phase by implementing the agreed-upon strategies, methodologies, and solutions. We provide regular updates on progress, address any challenges that arise, and make necessary adjustments to ensure success.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
@@ -309,7 +423,7 @@
             <div class="info">
 
                 <div class="left">
-                    <a href="index.html"><img src="https://cfocraft.com/wp-content/uploads/2023/04/WhatsApp-Image-2024-06-17-at-5.12.35-PM-1-e1723554014801.jpeg" alt=""></a>
+                    <a href="index.html"><img src="/assets/logo/logo.jpeg" alt=""></a>
                     <p>Our expert will guide you thoroughly in your journey. <br> Talk to us now to know the services we offer in <br> greater detail!</p>
                 </div>
 
@@ -373,7 +487,7 @@
     <!---- End coding for home page ---->
 
     <!---- link script file ---->
-
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="about.js"></script>
 
 </body>

@@ -1,6 +1,14 @@
 // Start Home Scipting **------------
 
     // creating variable **------------
+    var loader = document.querySelector('.loader');
+    const btn = document.querySelector('.menu_icon');
+    const drawer = document.querySelector('.side-menu');
+    const closeIcon = document.querySelector('.close_icon');
+    const cfo = document.querySelector('.cfo'); // Replace with your actual selector
+    const business = document.querySelector('.side-menu .business'); // Replace with your actual selector
+    const cfoSubmenu = document.querySelector('.cfosubmenu');
+    const businessSubmenu = document.querySelector('.busiesssubmenu');
 
     // nav items
     var cfodropdownbox = document.querySelector(".fst_dropdown_box");
@@ -36,6 +44,82 @@
     // Get all necessary elements
     const dropdown1 = document.querySelector(".dropdown1");
     const dropdown2 = document.querySelector(".dropdown2");
+
+    (function smoothScrolling(){
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('.scroll-container'), // Replace '.scroll-container' with your actual selector
+            smooth: true
+        });
+    })();
+
+    (function loaderAnimation(){
+        setTimeout(function(){
+            loader.style.top = '-100%';
+        }, 6000)
+    })();
+
+    function isOpenYaNot() {
+
+        // CFO click
+        cfo.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleSubmenu(cfoSubmenu, cfo , downicon1);
+        });
+
+        // Business click
+        business.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleSubmenu(businessSubmenu, business , downicon2);
+        });
+
+        // Generic toggle function
+        function toggleSubmenu(submenu, button , icon) {
+            const isOpened = button.getAttribute('isOpend') === 'true';
+            if (!isOpened) {
+                submenu.style.display = 'block';
+                button.setAttribute('isOpend', 'true');
+                icon.textContent = 'keyboard_arrow_up';
+            } else {
+                submenu.style.display = 'none';
+                button.setAttribute('isOpend', 'false');
+                icon.textContent = 'keyboard_arrow_down';
+            }
+        }
+    }
+
+    // Call the function to activate submenu toggling
+    isOpenYaNot();
+
+    (function(){
+
+      function openMenu(){
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden','false');
+        overlay.classList.add('show');
+        overlay.setAttribute('aria-hidden','false');
+      }
+
+      function closeMenu(){
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden','true');
+        overlay.classList.remove('show');
+        overlay.setAttribute('aria-hidden','true');
+        btn.focus();
+      }
+
+      btn.addEventListener('click', function(){
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if(expanded) closeMenu(); else openMenu();
+      });
+
+      overlay.addEventListener('click', closeMenu);
+      closeIcon.addEventListener('click', closeMenu);
+
+    })();
 
     (function toggleDropdown1(){
 
@@ -94,45 +178,47 @@
         });
     })();
 
+    // entry page animation
     (function(){
-      // keep all text in array
-      const texts = [
-          "CFO Services",
-          "Business Strategy and Planning",
-          "Business Process Transformation",
-          "Business Process Optimising",
-          "Business Intelligence Analysis",
-          "Treasury and Fund Raising"
-      ];
+        
+        // keep all text in array
+        const texts = [
+            "CFO Services",
+            "Business Strategy and Planning",
+            "Business Process Transformation",
+            "Business Process Optimising",
+            "Business Intelligence Analysis",
+            "Treasury and Fund Raising"
+        ];
 
-      let index = 0;
+        let index = 0;
+        
+        function showTextGSAP(){
+            // fade out current text
+            gsap.to(changeText, {
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    // change the text after fade out
+                    changeText.textContent = texts[index];
+                    index = (index + 1) % texts.length;
+                
+                    // fade in new text
+                    gsap.to(changeText, {
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                }
+            });
+        }
+    
+        // initial text
+        changeText.textContent = texts[index];
+        index++;
 
-      function showTextGSAP(){
-        // fade out current text
-        gsap.to(changeText, {
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => {
-                // change the text after fade out
-                changeText.textContent = texts[index];
-                index = (index + 1) % texts.length;
-            
-                // fade in new text
-                gsap.to(changeText, {
-                    opacity: 1,
-                    duration: 0.5,
-                    ease: "power2.out"
-                });
-            }
-        });
-    }
-    
-    // initial text
-    changeText.textContent = texts[index];
-    index++;
-    
-    // run function every 4 seconds
-    setInterval(showTextGSAP, 4000);
+        // run function every 4 seconds
+        setInterval(showTextGSAP, 4000);
         
     })()
 
@@ -140,7 +226,7 @@
 
         // array keeps data dynamic
         const services = [
-            "https://cfocraft.com/wp-content/uploads/2023/04/tab-service-1-min.webp",
+            "/assets/images/CFO-service.webp",
             "CFO Service",
             "Financial stress in a startup comes from many directions. Managing cash, fundraising, meeting projections, finding the right pricing framework all contribute."
         ];
@@ -183,7 +269,7 @@
 
         // array keeps data dynamic
         const services = [
-            "https://cfocraft.com/wp-content/uploads/2023/05/business-plan-strategy-development-process-graphic-concept-min-2048x1367.jpg",
+            "/assets/images/business-stretegy-planning.jpg",
             "Business Strategy & Planning",
             "A business plan tells the story of what your business strives to be and maps out the route you’ll take to get there."
         ];
@@ -233,7 +319,7 @@
 
         // array keeps data dynamic
         const services = [
-            "https://cfocraft.com/wp-content/uploads/2023/05/standard-quality-control-collage-concept-min-2048x1366.jpg",
+            "/assets/images/business-process-trasnformation.jpg",
             "Business Process Transformation",
             "Are you using dated processes and business practices simply because you’ve always done things that way? If so, you’re not alone."
         ];
@@ -283,7 +369,7 @@
 
         // array keeps data dynamic
         const services = [
-            "https://cfocraft.com/wp-content/uploads/2023/05/business-presentation-min-scaled-e1683542359749-2048x819.jpg",
+            "/assets/images/business-process-optimising.jpg",
             "Business Process optimising",
             "Controls Optimisation is our response to the needs of businesses and its operations to have the right controls at the right cost."
         ];
@@ -333,7 +419,7 @@
 
         // array keeps data dynamic
         const services = [
-            "https://cfocraft.com/wp-content/uploads/2023/05/business-scene-top-view-with-laptop-min-2048x1367.jpg",
+            "/assets/images/business-intelligence-analysis.jpg",
             "Business Intelligence & Analysis",
             "In Todays’ world, Google Maps has become indispensable. It plots the fastest course and helps you steer clear of problem areas in the path ahead."
         ];
@@ -383,7 +469,7 @@
 
         // array keeps data dynamic
         const services = [
-            "https://cfocraft.com/wp-content/uploads/2023/05/wepik-export-20230508104346Alkd-min.png",
+            "/assets/images/cash-management-funding.png",
             "Cash Management and Funding",
             "Financial stress in a startup comes from many directions. Managing cash, fundraising, meeting projections, finding the right pricing framework all contribute."
         ];
