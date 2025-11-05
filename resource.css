@@ -39,10 +39,10 @@ body{
 .main .menu_icon{
     position:absolute;
     display:none;
-    top:1%;
+    top:1.5%;
     right:2%;
     color:#FFFF;
-    font-size:6.5vw;
+    font-size:8vw;
     z-index:9999;
 }
 
@@ -393,6 +393,7 @@ nav .right button:hover a {
 }
 .section1 .resource_con img{
     width:75%;
+    margin-top:25%;
 }
 .section1 .presentation_con{
     width:100%;

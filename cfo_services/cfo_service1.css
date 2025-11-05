@@ -38,10 +38,10 @@ body{
 .main .menu_icon{
     position:absolute;
     display:none;
-    top:1%;
+    top:1.5%;
     right:2%;
     color:#FFFF;
-    font-size:6.5vw;
+    font-size:8vw;
     z-index:9999;
 }
 .side-menu{
@@ -422,7 +422,7 @@ nav .right button:hover a {
 
 .section1 .right{
     width:50%;
-    height:fit-content;
+    height:100%;
     display:flex;
     justify-content:center;
     align-items:center;

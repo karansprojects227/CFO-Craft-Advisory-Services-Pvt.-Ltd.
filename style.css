@@ -116,10 +116,10 @@ body{
 .main .menu_icon{
     position:absolute;
     display:none;
-    top:1%;
+    top:1.5%;
     right:2%;
     color:#FFFF;
-    font-size:6.5vw;
+    font-size:8vw;
     z-index:9999;
 }
 
@@ -530,10 +530,21 @@ nav .right button:hover a {
         height: 100%;
         display:flex;
         justify-content:center;
+        position: relative;
         align-items:center;
     }
-    .section1 .right img{
-        width:30vw;
+    .section1 .right .gif-image{
+        width:35vw;
+        position:absolute;
+        top:5%;
+        z-index:2;
+    }
+    .section1 .right .gif{
+        width:35vw;
+        position:absolute;
+        top:15%;
+        left:10%;
+        z-index:1;
     }
 
     /* --- End Section1 CSS --- */
@@ -1145,7 +1156,7 @@ nav .right button:hover a {
             height:fit-content;
         }
 
-        .section1 .left , .section1 .right{
+        .section1 .left{
             width:100%;
             height:fit-content;
         }
@@ -1154,17 +1165,26 @@ nav .right button:hover a {
             padding:5vw;
         }
 
-        .section1 .right img{
-            width:65vw;
-        }
-
-        .section1 .right{
-            padding-top:30px;
-        }
-
         .section1 .left h2{
             font-size:4.68vw;
             line-height:5vw;
+        }
+
+        .section1 .right{
+            width:100%;
+            height:45vh;
+        }
+
+        .section1 .right .gif{
+            width:70vw;
+            left:50%;
+            transform:translateX(-50%);
+            top:25%;
+        }
+
+        .section1 .right .gif-image{
+            width:60vw;
+            top:10%;
         }
 
         .section1 .left p {
